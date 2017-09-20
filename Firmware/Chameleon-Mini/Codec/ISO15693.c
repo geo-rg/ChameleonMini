@@ -21,6 +21,7 @@
 #define EOC_CODE                0xDF
 #define ISO15693_SAMPLE_CLK     TC_CLKSEL_DIV2_gc // 13.56MHz
 #define ISO15693_SAMPLE_PERIOD  128 // 9.4us
+//#define ISO15693_SAMPLE_PERIOD  128 // 9.4us
 
 #define WRITE_GRID_CYCLES       4096
 #define SUBCARRIER_1            32
