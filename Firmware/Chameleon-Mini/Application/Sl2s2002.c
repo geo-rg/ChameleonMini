@@ -90,7 +90,7 @@ uint16_t Sl2s2002AppProcess(uint8_t* FrameBuf, uint16_t FrameBytes)
                         ISO15693CopyUid(&FrameBuf[2], Sl2s2002Uid);
                         FrameBuf[10] = 0x00;
                         FrameBuf[11] = 0xC2;
-                        FrameBuf[12] = 0x03;
+                        FrameBuf[12] = 0x1b;
                         FrameBuf[13] = 0x03;
                         FrameBuf[14] = 0x01;
                         ResponseByteCount = 15;
@@ -111,7 +111,7 @@ uint16_t Sl2s2002AppProcess(uint8_t* FrameBuf, uint16_t FrameBytes)
                         if (FrameBuf[0] & ISO15693_REQ_FLAG_OPTION)
                         {
                             uint8_t count;
-                            for (count = 0; count < PageAddressCount; count++)
+                            for (count = 0; count < PageAddressCount - 1; count++)
                             {
                                 *FrameBufPtr++ = 0; // block security status = unlocked
                                 MemoryReadBlock(FrameBufPtr, PageAddress * BYTES_PER_PAGE, BYTES_PER_PAGE);
